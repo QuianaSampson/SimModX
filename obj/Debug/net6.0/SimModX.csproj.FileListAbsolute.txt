@@ -33,3 +33,4 @@ C:\Users\baby girl\Desktop\SimModX\SimModX\obj\Debug\net6.0\refint\SimModX.dll
 C:\Users\baby girl\Desktop\SimModX\SimModX\obj\Debug\net6.0\SimModX.pdb
 C:\Users\baby girl\Desktop\SimModX\SimModX\obj\Debug\net6.0\SimModX.genruntimeconfig.cache
 C:\Users\baby girl\Desktop\SimModX\SimModX\obj\Debug\net6.0\ref\SimModX.dll
+C:\Users\baby girl\Desktop\SimModX\SimModX\obj\Debug\net6.0\SimModX.sourcelink.json

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimModX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84255ef54e6846474a26f9994cbd927e206c5833")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimModX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimModX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
