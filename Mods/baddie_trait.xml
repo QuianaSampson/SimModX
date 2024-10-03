@@ -1,0 +1,10 @@
+<Trait>
+  <Name>baddie</Name>
+  <Description>Baddie behavior</Description>
+  <Attributes>
+    <Attribute>
+      <Name>Positive</Name>
+      <Value>true</Value>
+    </Attribute>
+  </Attributes>
+</Trait>

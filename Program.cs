@@ -1,33 +1,30 @@
 ﻿// -------------------------------------------------------------------
 // File Path: Program.cs
-// Description: Main application entry point. Handles mod creation logic and Python script running.
+// Description: Main entry point. Tests Python integration.
 // -------------------------------------------------------------------
 
-using System;                     // Make sure 'using' statements are at the top
-using SimModX.Core;               // Import your ModCreator
-using SimModX.PythonIntegration;  // Import your PythonRunner
+using System;  // Ensure that 'using' statements are at the top
+using SimModX.PythonIntegration;  // Import PythonRunner
 
-class Program
+namespace SimModX
 {
-    static void Main(string[] args)
+    class Program
     {
-        // Test the mod creation functionality
-        ModCreator modCreator = new ModCreator();
+        static void Main(string[] args)
+        {
+            PythonRunner pythonRunner = new PythonRunner();
 
-        Console.WriteLine("Enter the mod name:");
-        string modName = Console.ReadLine();
+            // Sample Python script
+            string script = @"
+result = 5 + 3
+";
 
-        Console.WriteLine("Enter the mod description:");
-        string description = Console.ReadLine();
+            // Execute Python script
+            pythonRunner.ExecutePythonScript(script);
 
-        modCreator.CreateTraitMod(modName, description);
-        Console.WriteLine("Mod creation complete.");
-
-        // Test Python integration
-        PythonRunner runner = new PythonRunner();
-        string script = "result = 5 + 3"; // Sample Python script
-        runner.ExecutePythonScript(script);
-        var result = runner.GetVariable("result");
-        Console.WriteLine("Result from Python: " + result);
+            // Fetch the result from the Python script
+            var result = pythonRunner.GetVariable("result");
+            Console.WriteLine($"Result from Python: {result}");
+        }
     }
 }

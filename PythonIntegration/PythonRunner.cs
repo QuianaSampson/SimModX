@@ -1,42 +1,48 @@
 // -------------------------------------------------------------------
 // File Path: PythonIntegration/PythonRunner.cs
-// Description: Handles running Python scripts within the application.
+// Description: Handles the execution of Python scripts via IronPython.
 // -------------------------------------------------------------------
 
+using System;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
-using System;
 
 namespace SimModX.PythonIntegration
 {
     public class PythonRunner
     {
-        private ScriptEngine engine;
-        private ScriptScope scope;
+        private ScriptEngine _engine;
+        private ScriptScope _scope;
 
         public PythonRunner()
         {
-            engine = Python.CreateEngine(); // Create Python engine
-            scope = engine.CreateScope();   // Create a scope for variables
+            _engine = Python.CreateEngine();
+            _scope = _engine.CreateScope();
         }
 
-        // Method to run a Python script
         public void ExecutePythonScript(string script)
         {
             try
             {
-                engine.Execute(script, scope); // Run the Python script
+                _engine.Execute(script, _scope);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Python Script Error: " + ex.Message);
+                Console.WriteLine($"Python script execution failed: {ex.Message}");
             }
         }
 
-        // Method to get a Python variable
         public dynamic GetVariable(string variableName)
         {
-            return scope.GetVariable(variableName);
+            if (_scope.ContainsVariable(variableName))
+            {
+                return _scope.GetVariable(variableName);
+            }
+            else
+            {
+                Console.WriteLine($"Variable '{variableName}' not found in Python script.");
+                return null;
+            }
         }
     }
 }
